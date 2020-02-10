@@ -17,3 +17,4 @@ http://url or local host/?phone=0780291130&text=hi there 1
 ## future plans
 1- improve and implement a proper html view 
 2- clean up the array used to store the the messages.
+3- implement multiple phone sources.

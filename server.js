@@ -20,23 +20,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
   console.log('GET SMS');
   console.log(req.query);
-  const { phone, text } = req.query;
-  array.push({ phone, text });
   res.send('OK');
 });
 
+// post functhion to add JSON to array 
 app.post('/', (req, res) => {
   console.log('POST SMS');
   console.log(req.query);
+  const { phone, text } = req.query;
+  array.push({ phone, text });
   res.send('OK sent');
 });
 
+// prints all messsages in array
 app.get('/all', (req, res) => {
   console.log('GET ALL SMS');
   console.log(req.query);
-  // const { phone, text } = req.query;
-  // array.push({ phone, text });
-  // res.json('sms length: ' + array.length);
+  res.json('sms length: ' + array.length);
   res.send(array);
 });
 const PORT = process.env.PORT || 3000;
