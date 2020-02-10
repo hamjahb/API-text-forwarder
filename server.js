@@ -49,7 +49,7 @@ app.get('/all', (req, res) => {
   // const { phone, text } = req.query;
   // array.push({ phone, text });
   // res.json('sms length: ' + array.length);
-  res.send('sms length: ' + array.length /n + array);
+  res.send(array);
 });
 const PORT = process.env.PORT || 3000;
 
