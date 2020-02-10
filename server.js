@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
   array.push({ phone, text });
   res.send('OK');
 });
+
 app.post('/', (req, res) => {
   console.log('POST SMS');
   console.log(req.query);
