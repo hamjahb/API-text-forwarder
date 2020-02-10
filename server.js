@@ -28,14 +28,14 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   console.log('POST SMS');
   console.log(req.query);
-  res.send('OK');
+  res.send('OK sent');
 });
 
 app.get('/all', (req, res) => {
   console.log('GET ALL SMS');
   console.log(req.query);
-  const { phone, text } = req.query;
-  array.push({ phone, text });
+  // const { phone, text } = req.query;
+  // array.push({ phone, text });
   // res.json('sms length: ' + array.length);
   res.send(array);
 });
