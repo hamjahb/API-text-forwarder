@@ -22,8 +22,15 @@ app.get('/', (req, res) => {
   console.log(req.query);
   const { phone, text } = req.query;
   array.push({ phone, text });
+
+  // remove arrays if there are more than 10 elements
+  if (array.length > 10) {
+    array.shift()
+  }
+
   res.send('OK');
 });
+
 
 // post functhion to add JSON to array 
 app.post('/', (req, res) => {
@@ -34,6 +41,7 @@ app.post('/', (req, res) => {
   res.send('OK sent');
 });
 
+
 // prints all messsages in arrray
 app.get('/all', (req, res) => {
   console.log('GET ALL SMS');
@@ -41,7 +49,7 @@ app.get('/all', (req, res) => {
   // const { phone, text } = req.query;
   // array.push({ phone, text });
   // res.json('sms length: ' + array.length);
-  res.send(array);
+  res.send('sms length: ' + array.length /n + array);
 });
 const PORT = process.env.PORT || 3000;
 
