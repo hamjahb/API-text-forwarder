@@ -29,7 +29,7 @@ app.post('/', (req, res) => {
   console.log(req.query);
   const { phone, text } = req.query;
   array.push({ phone, text });
-  res.send('OK sent');
+  res.send('OK');
 });
 
 // prints all messsages in array
