@@ -3,7 +3,11 @@ let bodyParser = require('body-parser');
 // let db = require("../database/db");
 let app = express();
 
+// array for each phhone
 let array = [];
+let mofareh = []
+let hanady = []
+
 // the problem was CORS origin and the request sent to port 3000 [Front-end port] not 5000 [Back-end port]
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -17,6 +21,17 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+// server recive sms from phone
+/* these are the routes used to recive sms and add them to server
+  name    : route
+
+  hisham  : /
+  hanady  : /hanady
+  mofareh : /mofareh
+*/
+
+// adds hisham sms to array 
 app.get('/', (req, res) => {
   console.log('GET SMS');
   console.log(req.query);
@@ -26,6 +41,37 @@ app.get('/', (req, res) => {
   // remove arrays if there are more than 10 elements
   if (array.length > 10) {
     array.shift()
+  }
+
+  res.send('OK');
+});
+
+// adds hanady sms to hanady array
+app.get('/hanady', (req, res) => {
+  console.log('GET Hanady SMS');
+  console.log(req.query);
+  const { phone, text } = req.query;
+  hanady.push({ phone, text });
+
+  // remove arrays if there are more than 10 elements
+  if (hanady.length > 10) {
+    hanady.shift()
+  }
+
+  res.send('OK');
+});
+
+
+// adds mofareh sms to mofareh array
+app.get('/mofareh', (req, res) => {
+  console.log('GET MOFAREH SMS');
+  console.log(req.query);
+  const { phone, text } = req.query;
+  mofareh.push({ phone, text });
+
+  // remove arrays if there are more than 10 elements
+  if (mofareh.length > 10) {
+    mofareh.shift()
   }
 
   res.send('OK');
@@ -42,15 +88,42 @@ app.post('/', (req, res) => {
 });
 
 
+/* api for user arrays */
+/* api routes 
+  name    : route
+
+  hisham  : /all
+  hanady  : /hanadyapi
+  mofareh : /mofarehapi
+
+ */
+
 // prints all messsages in arrray
 app.get('/all', (req, res) => {
   console.log('GET ALL SMS');
   console.log(req.query);
-  // const { phone, text } = req.query;
-  // array.push({ phone, text });
+
+  // this line is to just show number of sms in array
   // res.json('sms length: ' + array.length);
+  
   res.send(array);
 });
+
+// prints all messsages in hanady array
+app.get('/hanadyapi', (req, res) => {
+  console.log('GET ALL SMS');
+  console.log(req.query);
+  res.send(hanady);
+});
+
+// prints all messsages in mofareh array
+app.get('/mofarehapi', (req, res) => {
+  console.log('GET ALL SMS');
+  console.log(req.query);
+  res.send(mofareh);
+});
+
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, '0.0.0.0', function() {
