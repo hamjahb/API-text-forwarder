@@ -109,14 +109,14 @@ app.post('/mofareh', (req, res) => {
  */
 
 // prints all messsages in arrray
-app.get('/all', (req, res) => {
+app.get('/hishamapi', (req, res) => {
   console.log('GET ALL SMS');
   console.log(req.query);
 
   // this line is to just show number of sms in array
   // res.json('sms length: ' + array.length);
   
-  res.send(array);
+  res.send(hisham);
 });
 
 // prints all messsages in hanady array
