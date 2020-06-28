@@ -87,8 +87,8 @@ app.post('/test', (req, res) => {
   console.log('POST SMS');
   console.log(req.body);
   const { phone, text } = req.body;
-  test.push({ phone, text });
-  console.log(test);
+  array.push({ phone, text });
+  console.log(array);
   res.send('OK');
 });
 
