@@ -4,10 +4,11 @@ let bodyParser = require('body-parser');
 let app = express();
 
 // array for each phhone
-let array = [];
+let hisham = [];
 let mofareh = []
 let hanady = []
 let test = []
+
 
 // the problem was CORS origin and the request sent to port 3000 [Front-end port] not 5000 [Back-end port]
 app.use(function(req, res, next) {
@@ -23,74 +24,74 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// server recive sms from phone
-/* these are the routes used to recive sms and add them to server
-  name    : route
 
-  hisham  : /
-  hanady  : /hanady
-  mofareh : /mofareh
 
-  TO DO ****
-  tahani  : /tahani
-*/
-
-// adds hisham sms to array 
-app.get('/', (req, res) => {
-  console.log('GET SMS');
-  console.log(req.query);
-  const { phone, text } = req.query;
-  array.push({ phone, text });
-
-  // remove arrays if there are more than 10 elements
+// remove arrays if there are more than 10 elements
+function removeOver10(array) {
   if (array.length > 10) {
     array.shift()
-  }
-
-  res.send('OK');
-});
-
-// adds hanady sms to hanady array
-app.get('/hanady', (req, res) => {
-  console.log('GET Hanady SMS');
-  console.log(req.query);
-  const { phone, text } = req.query;
-  hanady.push({ phone, text });
-
-  // remove arrays if there are more than 10 elements
-  if (hanady.length > 10) {
-    hanady.shift()
-  }
-
-  res.send('OK');
-});
+  } 
+}
 
 
-// adds mofareh sms to mofareh array
-app.get('/mofareh', (req, res) => {
-  console.log('GET MOFAREH SMS');
-  console.log(req.query);
-  const { phone, text } = req.query;
-  mofareh.push({ phone, text });
+// server recive sms from phone
+/* these are the routes used to recive sms and add them to server
+name    : route
 
-  // remove arrays if there are more than 10 elements
-  if (mofareh.length > 10) {
-    mofareh.shift()
-  }
+hisham  : /hisham
+hanady  : /hanady
+mofareh : /mofareh
 
-  res.send('OK');
-});
-
+TO DO ****
+tahani  : /tahani
+*/
 
 // post functhion to add JSON to array 
 app.post('/test', (req, res) => {
   console.log('POST SMS');
   console.log(req.body);
   const { phone, text } = req.body;
-  array.push({ phone, text });
-  console.log(array);
+  test.push({ phone, text });
+  console.log(test);
+  removeOver10(test)
   res.send('OK');
 });
+
+
+// adds hisham sms to array 
+app.post('/hisham', (req, res) => {
+  console.log('GET Hisham SMS');
+  // console.log(req.body);
+  const { phone, text } = req.body;
+  hisham.push({ phone, text });
+  // remove arrays if there are more than 10 elements
+  removeOver10(hisham)
+  res.send('OK');
+});
+
+
+// adds hanady sms to hanady array
+app.post('/hanady', (req, res) => {
+  console.log('GET Hanady SMS');
+  const { phone, text } = req.body;
+  hanady.push({ phone, text });
+  // remove arrays if there are more than 10 elements
+  removeOver10(hanady)
+  res.send('OK');
+});
+
+
+// adds mofareh sms to mofareh array
+app.post('/mofareh', (req, res) => {
+  console.log('GET Mofareh SMS');
+  const { phone, text } = req.body;
+  mofareh.push({ phone, text });
+  // remove arrays if there are more than 10 elements
+  removeOver10(mofareh)
+  res.send('OK');
+});
+
+
 
 
 /* api for user arrays */
