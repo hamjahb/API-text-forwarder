@@ -7,6 +7,7 @@ let app = express();
 let hisham = [];
 let mofareh = []
 let hanady = []
+let tahani = []
 let test = []
 
 
@@ -41,8 +42,6 @@ name    : route
 hisham  : /hisham
 hanady  : /hanady
 mofareh : /mofareh
-
-TO DO ****
 tahani  : /tahani
 */
 
@@ -61,7 +60,6 @@ app.post('/test', (req, res) => {
 // adds hisham sms to array 
 app.post('/hisham', (req, res) => {
   console.log('GET Hisham SMS');
-  // console.log(req.body);
   const { phone, text } = req.body;
   hisham.push({ phone, text });
   // remove arrays if there are more than 10 elements
@@ -92,20 +90,25 @@ app.post('/mofareh', (req, res) => {
 });
 
 
+// adds tahani sms to array 
+app.post('/tahani', (req, res) => {
+  console.log('GET Tahani SMS');
+  const { phone, text } = req.body;
+  tahani.push({ phone, text });
+  // remove arrays if there are more than 10 elements
+  removeOver10(tahani)
+  res.send('OK');
+});
 
 
 /* api for user arrays */
 /* api routes 
   name    : route
 
-  hisham  : /all
+  hisham  : /hishamapi
   hanady  : /hanadyapi
   mofareh : /mofarehapi
-
-
-  TO DO ****
   tahani  : /tahaniapi
-
  */
 
 // prints all messsages in arrray
@@ -119,6 +122,7 @@ app.get('/hishamapi', (req, res) => {
   res.send(hisham);
 });
 
+
 // prints all messsages in hanady array
 app.get('/hanadyapi', (req, res) => {
   console.log('GET ALL SMS');
@@ -126,11 +130,20 @@ app.get('/hanadyapi', (req, res) => {
   res.send(hanady);
 });
 
+
 // prints all messsages in mofareh array
 app.get('/mofarehapi', (req, res) => {
-  console.log('GET ALL SMS');
+  console.log('GET Mofareh SMS');
   console.log(req.query);
   res.send(mofareh);
+});
+
+
+// prints all messsages in tahani array
+app.get('/tahniapi', (req, res) => {
+  console.log('GET Tahani SMS');
+  console.log(req.query);
+  res.send(tahani);
 });
 
 
