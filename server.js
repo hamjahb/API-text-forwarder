@@ -140,7 +140,7 @@ app.get('/mofarehapi', (req, res) => {
 
 
 // prints all messsages in tahani array
-app.get('/tahniapi', (req, res) => {
+app.get('/tahaniapi', (req, res) => {
   console.log('GET Tahani SMS');
   console.log(req.query);
   res.send(tahani);
