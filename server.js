@@ -7,6 +7,7 @@ let app = express();
 let array = [];
 let mofareh = []
 let hanady = []
+let test = []
 
 // the problem was CORS origin and the request sent to port 3000 [Front-end port] not 5000 [Back-end port]
 app.use(function(req, res, next) {
@@ -29,6 +30,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
   hisham  : /
   hanady  : /hanady
   mofareh : /mofareh
+
+  TO DO ****
+  tahani  : /tahani
 */
 
 // adds hisham sms to array 
@@ -79,12 +83,13 @@ app.get('/mofareh', (req, res) => {
 
 
 // post functhion to add JSON to array 
-app.post('/', (req, res) => {
+app.post('/test', (req, res) => {
   console.log('POST SMS');
-  console.log(req.query);
-  const { phone, text } = req.query;
-  array.push({ phone, text });
-  res.send('OK sent');
+  console.log(req.body);
+  const { phone, text } = req.body;
+  test.push({ phone, text });
+  console.log(test);
+  res.send('OK');
 });
 
 
@@ -95,6 +100,10 @@ app.post('/', (req, res) => {
   hisham  : /all
   hanady  : /hanadyapi
   mofareh : /mofarehapi
+
+
+  TO DO ****
+  tahani  : /tahaniapi
 
  */
 
@@ -124,7 +133,7 @@ app.get('/mofarehapi', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, '0.0.0.0', function() {
   console.log(`listening on port ${PORT}!`);
