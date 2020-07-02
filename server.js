@@ -21,10 +21,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-
 
 
 // remove arrays if there are more than 10 elements
@@ -47,11 +46,13 @@ function addToArray(array, newSMS){
 /* these are the routes used to recive sms and add them to server
 name    : route
 
+test    : /test
 hisham  : /hisham
 hanady  : /hanady
 mofareh : /mofareh
 tahani  : /tahani
 */
+
 
 // post functhion to add JSON to array 
 app.post('/test', (req, res) => {
@@ -105,6 +106,7 @@ app.post('/tahani', (req, res) => {
 /* api routes 
   name    : route
 
+  test    : /testapi
   hisham  : /hishamapi
   hanady  : /hanadyapi
   mofareh : /mofarehapi
@@ -122,19 +124,15 @@ app.get('/testapi', (req, res) => {
 
 // prints all messsages in arrray
 app.get('/hishamapi', (req, res) => {
-  console.log('GET ALL SMS');
-  console.log(req.query);
-
-  // this line is to just show number of sms in array
-  // res.json('sms length: ' + array.length);
-  
+  console.log('GET Hisham SMS');
+  console.log(req.query);  
   res.send(hisham);
 });
 
 
 // prints all messsages in hanady array
 app.get('/hanadyapi', (req, res) => {
-  console.log('GET ALL SMS');
+  console.log('GET Hanady SMS');
   console.log(req.query);
   res.send(hanady);
 });
