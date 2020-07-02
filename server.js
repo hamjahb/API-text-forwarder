@@ -38,6 +38,7 @@ function removeOver10(array) {
 function addToArray(array, newSMS){
   const { phone, text } = newSMS;
   array.push({ phone, text })
+  removeOver10(array)
   console.log(newSMS + 'added to ' + array);
 }
 
@@ -60,8 +61,6 @@ app.post('/test', (req, res) => {
   console.log(req.body);
   // add SMS to array
   addToArray(test, req.body)
-  // remove arrays if there are more than 10 elements
-  removeOver10(test)
   res.send('OK');
 });
 
@@ -70,7 +69,6 @@ app.post('/test', (req, res) => {
 app.post('/hisham', (req, res) => {
   console.log('GET Hisham SMS');
   addToArray(hisham, req.body)
-  removeOver10(hisham)
   res.send('OK');
 });
 
@@ -79,7 +77,6 @@ app.post('/hisham', (req, res) => {
 app.post('/hanady', (req, res) => {
   console.log('GET Hanady SMS');
   addToArray(hanady, req.body)
-  removeOver10(hanady)
   res.send('OK');
 });
 
@@ -88,7 +85,6 @@ app.post('/hanady', (req, res) => {
 app.post('/mofareh', (req, res) => {
   console.log('GET Mofareh SMS');
   addToArray(mofareh, req.body)
-  removeOver10(mofareh)
   res.send('OK');
 });
 
@@ -97,7 +93,6 @@ app.post('/mofareh', (req, res) => {
 app.post('/tahani', (req, res) => {
   console.log('GET Tahani SMS');
   addToArray(tahani, req.body)
-  removeOver10(tahani)
   res.send('OK');
 });
 
