@@ -35,6 +35,14 @@ function removeOver10(array) {
 }
 
 
+// add new message to array
+function addToArray(array, newSMS){
+  const { phone, text } = newSMS;
+  array.push({ phone, text })
+  console.log(newSMS + 'added to ' + array);
+}
+
+
 // server recive sms from phone
 /* these are the routes used to recive sms and add them to server
 name    : route
@@ -49,9 +57,9 @@ tahani  : /tahani
 app.post('/test', (req, res) => {
   console.log('POST SMS');
   console.log(req.body);
-  const { phone, text } = req.body;
-  test.push({ phone, text });
-  console.log(test);
+  // add SMS to array
+  addToArray(test, req.body)
+  // remove arrays if there are more than 10 elements
   removeOver10(test)
   res.send('OK');
 });
@@ -60,9 +68,7 @@ app.post('/test', (req, res) => {
 // adds hisham sms to array 
 app.post('/hisham', (req, res) => {
   console.log('GET Hisham SMS');
-  const { phone, text } = req.body;
-  hisham.push({ phone, text });
-  // remove arrays if there are more than 10 elements
+  addToArray(hisham, req.body)
   removeOver10(hisham)
   res.send('OK');
 });
@@ -71,9 +77,7 @@ app.post('/hisham', (req, res) => {
 // adds hanady sms to hanady array
 app.post('/hanady', (req, res) => {
   console.log('GET Hanady SMS');
-  const { phone, text } = req.body;
-  hanady.push({ phone, text });
-  // remove arrays if there are more than 10 elements
+  addToArray(hanady, req.body)
   removeOver10(hanady)
   res.send('OK');
 });
@@ -82,9 +86,7 @@ app.post('/hanady', (req, res) => {
 // adds mofareh sms to mofareh array
 app.post('/mofareh', (req, res) => {
   console.log('GET Mofareh SMS');
-  const { phone, text } = req.body;
-  mofareh.push({ phone, text });
-  // remove arrays if there are more than 10 elements
+  addToArray(mofareh, req.body)
   removeOver10(mofareh)
   res.send('OK');
 });
@@ -93,9 +95,7 @@ app.post('/mofareh', (req, res) => {
 // adds tahani sms to array 
 app.post('/tahani', (req, res) => {
   console.log('GET Tahani SMS');
-  const { phone, text } = req.body;
-  tahani.push({ phone, text });
-  // remove arrays if there are more than 10 elements
+  addToArray(tahani, req.body)
   removeOver10(tahani)
   res.send('OK');
 });
@@ -110,6 +110,15 @@ app.post('/tahani', (req, res) => {
   mofareh : /mofarehapi
   tahani  : /tahaniapi
  */
+
+
+// test api
+app.get('/testapi', (req, res) => {
+  console.log('GET ALL SMS');
+  console.log(test);
+  res.send(test);
+});
+
 
 // prints all messsages in arrray
 app.get('/hishamapi', (req, res) => {
