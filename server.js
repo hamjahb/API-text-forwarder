@@ -26,6 +26,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
+// a filter function so that only SMS from spacific senders will be added to array
+// const allowedInstitutions = [ 'Gazt.gov.sa', 'gazt.gov.sa', , 'GOSI', 'MOI.GOV.SA', 'IAM.GOV.SA' ]
+// const allowedBanks = ['alinmabank', 'AlahliSMS', 'RiyadBank', 'AlRajhiBank',]
+
+const lowerCaseAllowed = ['gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank']
+
+function codeFilter(smsToFilter) {  
+  lowerCasePhone = smsToFilter.toLowerCase()
+  console.log(lowerCasePhone);
+  
+  if (lowerCaseAllowed.includes(lowerCasePhone)) {
+    return true
+  }
+}
+
+
 // remove arrays if there are more than 10 elements
 function removeOver10(array) {
   if (array.length > 10) {
@@ -37,9 +53,13 @@ function removeOver10(array) {
 // add new message to array
 function addToArray(array, newSMS){
   const { phone, text } = newSMS;
-  array.push({ phone, text })
+  if (codeFilter(phone)) {
+    array.push({ phone, text })
+    console.log('new SMS added');
+  } else {
+    console.log('did not add SMS because filter');
+  }
   removeOver10(array)
-  console.log(newSMS + 'added to ' + array);
 }
 
 
