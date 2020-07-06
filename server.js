@@ -9,6 +9,7 @@ let mofareh = [];
 let hanady = [];
 let tahani = [];
 let ali = [];
+let hanan = [];
 let test = [];
 
 
@@ -123,6 +124,7 @@ hanady  : /hanady
 mofareh : /mofareh
 tahani  : /tahani
 ali     : /ali
+hanan   : /hanan
 */
 
 
@@ -176,6 +178,14 @@ app.post('/ali', (req, res) => {
 });
 
 
+// adds hanan to sms array
+app.post('/hanan', (req, res) => {
+  console.log('GET hanan SMS');
+  addToArray(hanan, req.body)
+  res.send('OK');
+});
+
+
 /* api for user arrays */
 /* api routes 
   name    : route
@@ -186,7 +196,7 @@ app.post('/ali', (req, res) => {
   mofareh : /mofarehapi
   tahani  : /tahaniapi
   ali     : /aliapi
-
+  hanan   : /hananapi
  */
 
 
@@ -235,6 +245,14 @@ app.get('/aliapi', (req, res) => {
   console.log('GET ali SMS');
   console.log(req.query);
   res.send(ali);
+});
+
+
+// prints all messsages in hanan array
+app.get('/hananapi', (req, res) => {
+  console.log('GET Hanan SMS');
+  console.log(req.query);
+  res.send(hanan);
 });
 
 
