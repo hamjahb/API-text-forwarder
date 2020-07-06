@@ -31,34 +31,51 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* list of institution in RIYADH
 
+*** TEST ***
+used for testing android app
+test        : '+972123456789'
+
 *** BANKS ****
-Alinma      : alinmabank
-Alahli      : AlahliSMS
-Riyadh      : RiyadhBank
-Alrajhi     : AlRajhiBank
+Alinma              : alinmabank
+Alahli              : AlahliSMS
+Riyadh              : RiyadhBank
+Alrajhi             : AlRajhiBank
+Arab NAtional Bank  : ANB
+
 
 *** GOVERNMENT INSTITUTIONS ***
+Fasah                                           : 'FASAH'
+
 General Authority of Zakat and Tax              : 'Gazt.gov.sa'
                                                 : 'gazt.gov.sa'
-
+                                            
+General Organization for Social Insureance(GOSI): 'GOSI'
+                                                
 Minestry of Interior                            : 'MOI.GOV.SA' 
 
-Nafath                                          : 'IAM.GOV.SA'
+Minestry of Justice                             : 'MOJ.GOV.SA'
 
 Ministry of Municipal & Rural Affairs           : 'MOMRA'
 
-General Organization for Social Insureance(GOSI): 'GOSI'
+MOROOR(Traffic)                                 : 'MOI-MOROOR'
+
+Nafath                                          : 'IAM.GOV.SA'
 
 Riyadh Chamber of commerce                      : 'RUH_Chamber'
 
+Saudi Post                                      : 'Saudi Post'
+
+
 *** UTILITY COMPANIES ***
-Saudi Telecom Company (STC)                     : 'mystc'
-                                                : 'stcbusiness'
+National Water Company                          : 'NWC'
 
 Saudi Electricity Company (Alkahraba)           : 'ALKAHRABA'
+
+Saudi Telecom Company (STC)                     : 'mystc'
+                                                : 'stcbusiness'
 */
 
-const lowerCaseAllowed = ['gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra']
+const lowerCaseAllowed = ['fasah', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
@@ -80,9 +97,12 @@ function removeOver10(array) {
 
 // add new message to array
 function addToArray(array, newSMS){
+  const timeStamp = Math.floor((new Date().getTime()/1000))
+  console.log(timeStamp);
+  
   const { phone, text } = newSMS;
   if (codeFilter(phone)) {
-    array.push({ phone, text })
+    array.push({ phone, text, timeStamp})
     console.log('new SMS added');
   } else {
     console.log('did not add SMS because filter');
