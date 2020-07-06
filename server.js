@@ -5,10 +5,11 @@ let app = express();
 
 // array for each phhone
 let hisham = [];
-let mofareh = []
-let hanady = []
-let tahani = []
-let test = []
+let mofareh = [];
+let hanady = [];
+let tahani = [];
+let ali = [];
+let test = [];
 
 
 // the problem was CORS origin and the request sent to port 3000 [Front-end port] not 5000 [Back-end port]
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 *** TEST ***
 used for testing android app
 test        : '+972123456789'
+
 
 *** BANKS ****
 Alinma              : alinmabank
@@ -120,6 +122,7 @@ hisham  : /hisham
 hanady  : /hanady
 mofareh : /mofareh
 tahani  : /tahani
+ali     : /ali
 */
 
 
@@ -165,6 +168,14 @@ app.post('/tahani', (req, res) => {
 });
 
 
+// adds ali to sms array
+app.post('/ali', (req, res) => {
+  console.log('GET ali SMS');
+  addToArray(ali, req.body)
+  res.send('OK');
+});
+
+
 /* api for user arrays */
 /* api routes 
   name    : route
@@ -174,6 +185,8 @@ app.post('/tahani', (req, res) => {
   hanady  : /hanadyapi
   mofareh : /mofarehapi
   tahani  : /tahaniapi
+  ali     : /aliapi
+
  */
 
 
@@ -214,6 +227,14 @@ app.get('/tahaniapi', (req, res) => {
   console.log('GET Tahani SMS');
   console.log(req.query);
   res.send(tahani);
+});
+
+
+// prints all messsages in ali array
+app.get('/aliapi', (req, res) => {
+  console.log('GET ali SMS');
+  console.log(req.query);
+  res.send(ali);
 });
 
 
