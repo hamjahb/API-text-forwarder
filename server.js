@@ -27,10 +27,38 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // a filter function so that only SMS from spacific senders will be added to array
-// const allowedInstitutions = [ 'Gazt.gov.sa', 'gazt.gov.sa', , 'GOSI', 'MOI.GOV.SA', 'IAM.GOV.SA' ]
-// const allowedBanks = ['alinmabank', 'AlahliSMS', 'RiyadBank', 'AlRajhiBank',]
 
-const lowerCaseAllowed = ['gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank']
+
+/* list of institution in RIYADH
+
+*** BANKS ****
+Alinma      : alinmabank
+Alahli      : AlahliSMS
+Riyadh      : RiyadhBank
+Alrajhi     : AlRajhiBank
+
+*** GOVERNMENT INSTITUTIONS ***
+General Authority of Zakat and Tax              : 'Gazt.gov.sa'
+                                                : 'gazt.gov.sa'
+
+Minestry of Interior                            : 'MOI.GOV.SA' 
+
+Nafath                                          : 'IAM.GOV.SA'
+
+Ministry of Municipal & Rural Affairs           : 'MOMRA'
+
+General Organization for Social Insureance(GOSI): 'GOSI'
+
+Riyadh Chamber of commerce                      : 'RUH_Chamber'
+
+*** UTILITY COMPANIES ***
+Saudi Telecom Company (STC)                     : 'mystc'
+                                                : 'stcbusiness'
+
+Saudi Electricity Company (Alkahraba)           : 'ALKAHRABA'
+*/
+
+const lowerCaseAllowed = ['gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
