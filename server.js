@@ -53,6 +53,8 @@ General Authority of Zakat and Tax              : 'Gazt.gov.sa'
                                                 : 'gazt.gov.sa'
                                             
 General Organization for Social Insureance(GOSI): 'GOSI'
+
+Ministry of Commerce                            : 'MC.GOV.SA'
                                                 
 Minestry of Interior                            : 'MOI.GOV.SA' 
 
@@ -78,7 +80,7 @@ Saudi Telecom Company (STC)                     : 'mystc'
                                                 : 'stcbusiness'
 */
 
-const lowerCaseAllowed = ['fasah', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', '+972123456789']
+const lowerCaseAllowed = ['fasah', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', '+972123456789']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
