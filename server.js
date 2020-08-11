@@ -263,6 +263,6 @@ app.get('/hananapi', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, '0.0.0.0', function() {
+app.listen(PORT, function() {
   console.log(`listening on port ${PORT}!`);
 });
