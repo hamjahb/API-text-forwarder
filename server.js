@@ -42,7 +42,7 @@ test        : '+972123456789'
 *** BANKS ****
 Alinma              : 'alinmabank'
 Alahli              : 'AlahliSMS'
-Riyadh              : 'RiyadhBank'
+Riyadh              : 'RiyadBank'
 Alrajhi             : 'AlRajhiBank'
 Arab NAtional Bank  : 'ANB'
 Aljazira Bank       : 'AlJaziraSMS'
@@ -90,7 +90,7 @@ Saudi Telecom Company (STC)                     : 'mystc'
                                                 : 'stcbusiness'
 */
 
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadhbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad',   '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad',   '+972123456789', '+001-123456789']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
