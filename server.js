@@ -83,6 +83,8 @@ Saudi Customs                                   : 'customs'
 
 Saudi Post                                      : 'Saudi Post'
 
+Saber                                           : 'SABER'
+
 Simah                                           : 'SIMAH'
 
 
@@ -99,7 +101,7 @@ Saudi Telecom Company (STC)                     : 'mystc'
 Amazon Saudi Arabia                             : 'Amazon'
 */
 
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon',    '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber',    '+972123456789', '+001-123456789']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
