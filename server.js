@@ -77,6 +77,8 @@ Nafath                                          : 'IAM.GOV.SA'
 
 Riyadh Chamber of commerce                      : 'RUH_Chamber'
 
+Riyadh Municipality                             : 'RiyadhMun'
+
 Salamah Saudi Civil Defence                     : '998.Salamah'
 
 Saudi Customs                                   : 'customs'
@@ -103,7 +105,7 @@ Saudi Telecom Company (STC)                     : 'mystc'
 Amazon Saudi Arabia                             : 'Amazon'
 */
 
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber',, 'm-code', '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', '+972123456789', '+001-123456789']
 
 function codeFilter(smsToFilter) {  
   lowerCasePhone = smsToFilter.toLowerCase()
