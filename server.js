@@ -9,7 +9,7 @@ let mofareh = [];
 let hanady = [];
 let tahani = [];
 let ali = [];
-let hanan = [];
+let hanna = [];
 let test = [];
 
 
@@ -151,7 +151,7 @@ hanady  : /hanady
 mofareh : /mofareh
 tahani  : /tahani
 ali     : /ali
-hanan   : /hanan
+hanna   : /hanna
 */
 
 
@@ -205,10 +205,10 @@ app.post('/ali', (req, res) => {
 });
 
 
-// adds hanan to sms array
-app.post('/hanan', (req, res) => {
-  console.log('GET hanan SMS');
-  addToArray(hanan, req.body)
+// adds hanna to sms array
+app.post('/hanna', (req, res) => {
+  console.log('GET hanna SMS');
+  addToArray(hanna, req.body)
   res.send('OK');
 });
 
@@ -223,7 +223,7 @@ app.post('/hanan', (req, res) => {
   mofareh : /mofarehapi
   tahani  : /tahaniapi
   ali     : /aliapi
-  hanan   : /hananapi
+  hanna   : /hannaapi
  */
 
 
@@ -275,11 +275,11 @@ app.get('/aliapi', (req, res) => {
 });
 
 
-// prints all messsages in hanan array
-app.get('/hananapi', (req, res) => {
-  console.log('GET Hanan SMS');
+// prints all messsages in hanna array
+app.get('/hannaapi', (req, res) => {
+  console.log('GET hanna SMS');
   console.log(req.query);
-  res.send(hanan);
+  res.send(hanna);
 });
 
 
