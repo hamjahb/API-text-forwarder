@@ -10,6 +10,7 @@ let hanady = [];
 let tahani = [];
 let ali = [];
 let hanna = [];
+let edward = [];
 let test = [];
 
 
@@ -96,10 +97,10 @@ Mobily                                          : 'M-CODE'
 
 National Water Company                          : 'NWC'
 
-Saudi Electricity Company (Alkahraba)           : 'ALKAHRABA'
+Saudi Electricity Company (Alkahraba)           :'ALKAHRABA'
 
-Saudi Telecom Company (STC)                     : 'mystc'
-                                                : 'stcbusiness'
+Saudi Telecom Company (STC)                     :'mystc'
+                                                :'stcbusiness'
 
 
 *** THIRD PARTY COMPANIES ****
@@ -153,6 +154,7 @@ mofareh : /mofareh
 tahani  : /tahani
 ali     : /ali
 hanna   : /hanna
+edward  : /edward
 */
 
 
@@ -214,6 +216,14 @@ app.post('/hanna', (req, res) => {
 });
 
 
+// adds edward to sms array
+app.post('/edward', (req, res) => {
+  console.log('POST SMS');
+  addToArray(edward, req.body)
+  res.send('OK');
+});
+
+
 /* api for user arrays */
 /* api routes 
   name    : route
@@ -225,6 +235,7 @@ app.post('/hanna', (req, res) => {
   tahani  : /tahaniapi
   ali     : /aliapi
   hanna   : /hannaapi
+  edward  : /edwardapi
  */
 
 
@@ -281,6 +292,14 @@ app.get('/hannaapi', (req, res) => {
   console.log('GET hanna SMS');
   console.log(req.query);
   res.send(hanna);
+});
+
+
+// prints all messsages in edward array
+app.get('/edwardapi', (req, res) => {
+  console.log('GET edward SMS');
+  console.log(req.query);
+  res.send(edward);
 });
 
 
