@@ -114,6 +114,8 @@ Saudi Telecom Company (STC)                     :'mystc'
                                                 :'stcbusiness'
                                                 :'Stc Out ER'
 
+STC SMS gateway                                 : 'OTP-SMS'
+
 
 *** THIRD PARTY COMPANIES ****
 Amazon Saudi Arabia                             : 'Amazon'
@@ -123,7 +125,7 @@ dnet                                            : 'dnet'
 obiky system                                    : 'M-CODE'
 */
 
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', 'snb-alahli','FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', 'snb-alahli','FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', 'otp-sms', '+972123456789', '+001-123456789']
 
 
 // standerdize sms then filter
