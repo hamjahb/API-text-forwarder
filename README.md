@@ -17,4 +17,4 @@ http://url or local host/?phone=0780291130&text=hi there 1
 ## future plans
 1. add passwords so only those with passwords are able to access information
 2. more encomapssing filter system
-3. refactor code to not be in one file
+3. refactor code to not be in one file.
