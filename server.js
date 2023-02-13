@@ -66,6 +66,9 @@ Fasah                                           : 'FASAH'
 General Authority of Zakat and Tax              : 'Gazt.gov.sa'
                                                 : 'gazt.gov.sa'
 
+General Secretariate of xakat, tax and customs commitees
+                                                : 'GSTC.gov.sa'
+
 Zakat, Tax and Customes Aithority (ZATCA)       : 'ZATCA'                         
                                             
 General Organization for Social Insureance(GOSI): 'GOSI'
@@ -138,7 +141,7 @@ Saudi Bsuiness Center                           : 'SBC'
 */
 
 /* lower case only names to be allowed to show */
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'mim-coo', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', 'snb-alahli','FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', 'HRSD', 'otp-sms', 'absher', 'senaei', 'tamm', 'misa', 'moj', 'sbc',  '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alahlisms', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'mim-coo', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', 'snb-alahli','FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', 'HRSD', 'otp-sms', 'absher', 'senaei', 'tamm', 'misa', 'moj', 'sbc', 'gstc.gov.sa',  '+972123456789', '+001-123456789']
 
 
 // standerdize sms then filter
