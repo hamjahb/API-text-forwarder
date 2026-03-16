@@ -83,6 +83,7 @@ Ministry of Commerce                            : 'MC.GOV.SA'
 Ministry of Human Resources and Social Devlopment 
                                                 : 'Qiwa'
                                                 : 'HRSD'
+                                                
 
 Ministry of Industry and Miniral Resources      : 'MIM-COO'
                                                 : 'MIM'
@@ -131,6 +132,7 @@ Mobily                                          : 'M-CODE'
 National Water Company                          : 'NWC'
 
 Saudi Electricity Company (Alkahraba)           :'ALKAHRABA'
+                                                :'SaudiEnergy'
 
 Saudi Telecom Company (STC)                     :'mystc'
                                                 :'stcbusiness'
@@ -158,7 +160,7 @@ temporary removed
 */
 
 /* lower case only names to be allowed to show */
-const lowerCaseAllowed = ['fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alinma', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'mim-coo', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', ,'FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', 'HRSD', 'otp-sms', 'absher', 'senaei', 'tamm', 'misa', 'moj', 'gastat', 'sbc', 'muqeem', 'gstc.gov.sa', 'balady', 'bupaarabia', 'tawuniya', 'snb-alahli', 'alahlisms','iam', 'nafath','mim', '+972123456789', '+001-123456789']
+const lowerCaseAllowed = ['SaudiEnergy', 'fasah', 'customs', 'mc.gov.sa', 'moi-moroor','nwc', 'anb', 'saudi post', 'moj.gov.sa', 'gazt.gov.sa', 'gosi', 'moi.gov.sa', 'iam.gov.sa', 'alinmabank', 'alinma', 'riyadbank', 'alrajhibank', 'ruh_chamber', 'mystc', 'stcbusiness', 'alkahraba', 'momra', 'raya', 'mim-coo', 'aljazirasms', 'simah', 'mudad', 'qiwa', '998.salamah', 'amazon', 'saber', 'riyadhmun', 'm-code', 'eservices','ajeer-hrsd','zatca', ,'FASAH.SA', 'dnet', 'm-code', 'Stc Out ER', 'HRSD', 'otp-sms', 'absher', 'senaei', 'tamm', 'misa', 'moj', 'gastat', 'sbc', 'muqeem', 'gstc.gov.sa', 'balady', 'bupaarabia', 'tawuniya', 'snb-alahli', 'alahlisms','iam', 'nafath','mim', '+972123456789', '+001-123456789']
 
 
 // standerdize sms then filter
